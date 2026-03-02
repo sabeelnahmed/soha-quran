@@ -1,4 +1,4 @@
-import { GROQ_API_URL, GROQ_API_KEY, GROQ_MODEL } from '../utils/constants';
+import { GROQ_API_URL, GROQ_MODEL } from '../utils/constants';
 
 const SYSTEM_PROMPT = `You are a knowledgeable Islamic scholar providing comprehensive, accessible tafsir (interpretation) of Quranic passages. You will be given ALL the verses of a Surah (or a passage from it). Provide a COMPLETE interpretation covering EVERY verse together as a unified passage. Structure your response as follows:
 
@@ -44,7 +44,6 @@ export async function sendChatMessage(messages) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${GROQ_API_KEY}`,
     },
     body: JSON.stringify({
       model: GROQ_MODEL,
